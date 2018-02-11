@@ -19,8 +19,8 @@ local function NumToCN(num)
     return CN
 end
 
-function callback()
-  print "Callback"
+function callback( name )
+  print(name)
 end
 
 function defcallback()
@@ -29,14 +29,14 @@ end
 
 thread.start(function()
 
-  haha.setnotify(callback)
+  haha.setnotify("ling",callback)
   haha.testnotify()
 
   -- haha.setnotify(callback)
 
-  print(module.constant)
-  module.func3()
-  print(NumToCN(56665))
+  -- print(module.constant)
+  -- module.func3()
+  -- print(NumToCN(56665))
   pio.pin.setdir(pio.OUTPUT, pio.GPIO25)
   pio.pin.setpull(pio.NOPULL, pio.GPIO25)
   while true do

@@ -2,14 +2,10 @@
 
 -- create fontdemo table and set some defaults
 tftdemo = {
-    -- dispType = gdisplay.SSD1306_128_32, -- or gdisplay.ST7735B, gdisplay.ST7735, gdisplay.ST7735G
-    -- maxx = 128,
-    -- maxy = 32,
-    -- miny = 1,
-    dispType = gdisplay.ILI9341, -- or gdisplay.ST7735B, gdisplay.ST7735, gdisplay.ST7735G
-    maxx = 240,
-    maxy = 320,
-    miny = 12,
+    dispType = gdisplay.SSD1306_128_32, -- or gdisplay.ST7735B, gdisplay.ST7735, gdisplay.ST7735G
+    maxx = 128,
+    maxy = 32,
+    miny = 1,
     touch = false,
     -- fonts used in this demo
     fontnames = {

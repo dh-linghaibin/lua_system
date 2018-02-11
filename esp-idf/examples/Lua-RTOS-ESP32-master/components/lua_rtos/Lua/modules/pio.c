@@ -583,7 +583,7 @@ static const LUA_REG_TYPE pio_map[] = {
 #endif
 
 LUALIB_API int luaopen_pio(lua_State *L) {
-  printf("linghaibin pio\n");
+  // printf("linghaibin pio\n");
 	return 0;
 }
 
