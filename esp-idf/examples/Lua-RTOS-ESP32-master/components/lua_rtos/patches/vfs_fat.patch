@@ -1,0 +1,24 @@
+diff --git a/components/fatfs/src/vfs_fat.c b/components/fatfs/src/vfs_fat.c
+index 556492e..3bc4d94 100644
+--- a/components/fatfs/src/vfs_fat.c
++++ b/components/fatfs/src/vfs_fat.c
+@@ -457,7 +457,7 @@ static int vfs_fat_stat(void* ctx, const char * path, struct stat * st)
+         .tm_hour = ftime.hour
+     };
+     st->st_mtime = mktime(&tm);
+-    st->st_atime = 0;
++    st->st_atime = mktime(&tm);
+     st->st_ctime = 0;
+     return 0;
+ }
+@@ -625,8 +625,10 @@ static int vfs_fat_readdir_r(void* ctx, DIR* pdir,
+     entry->d_ino = 0;
+     if (fat_dir->filinfo.fattrib & AM_DIR) {
+         entry->d_type = DT_DIR;
++        entry->d_fsize = 0;
+     } else {
+         entry->d_type = DT_REG;
++        entry->d_fsize = fat_dir->filinfo.fsize;
+     }
+     strlcpy(entry->d_name, fat_dir->filinfo.fname,
+             sizeof(entry->d_name));

@@ -1,0 +1,33 @@
+.config
+*.o
+*.pyc
+*.a
+*.d
+
+# gtags
+GTAGS
+GRTAGS
+GPATH
+
+# emacs
+.dir-locals.el
+
+# emacs temp file suffixes
+*~
+.#*
+\#*#
+
+components/spiffs_image/image/tests/
+build/
+*.dis
+*.elf
+*.map
+**/.DS_Store
+components/mkspiffs/src/mkspiffs
+
+sdkconfig
+sdkconfig.old
+
+.cproject/
+.settings/
+.project

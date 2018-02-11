@@ -1,0 +1,164 @@
+[
+	{
+		"id": "WHITECAT-ESP32-N1",
+		"description": "Whitecat N1 ESP32",
+		"manufacturer": "whitecatboard.org",
+		"brand": "",
+		"type": "N1ESP32",
+		"subtype": "",
+		"filesystem": "default"
+	},
+	{
+		"id": "WHITECAT-ESP32-N1-OTA",
+		"description": "Whitecat N1 ESP32 with OTA",
+		"manufacturer": "whitecatboard.org",
+		"brand": "",
+		"type": "N1ESP32",
+		"subtype": "OTA",
+		"filesystem": "default"
+	},
+	{
+		"id": "WHITECAT-ESP32-N1-DEVKIT",
+		"description": "Whitecat N1 ESP32 DEVKIT",
+		"manufacturer": "whitecatboard.org",
+		"brand": "",
+		"type": "N1ESP32-DEVKIT",
+		"subtype": "",
+		"filesystem": "default"
+	},
+	{
+		"id": "WHITECAT-ESP32-N1-DEVKIT-OTA",
+		"description": "Whitecat N1 ESP32 DEVKIT with OTA",
+		"manufacturer": "whitecatboard.org",
+		"brand": "",
+		"type": "N1ESP32-DEVKIT",
+		"subtype": "OTA",
+		"filesystem": "default"
+	},
+	{
+		"id": "WHITECAT-ESP32-LORA-GW",
+		"description": "Whitecat ESP32 LORA GW",
+		"manufacturer": "whitecatboard.org",
+		"brand": "",
+		"type": "",
+		"subtype": "",
+		"filesystem": "g1"
+	},
+	{
+		"id": "WHITECAT-ESP32-LORA-GW-OTA",
+		"description": "Whitecat ESP32 LORA GW With OTA",
+		"manufacturer": "whitecatboard.org",
+		"brand": "",
+		"type": "ESP32-LORA-GW-OTA",
+		"subtype": "OTA",
+		"filesystem": "g1"
+	},
+	{
+		"id": "ESP32-CORE-BOARD",
+		"description": "Espressif Systems ESP32-CoreBoard",
+		"manufacturer": "Espressif Systems",
+		"brand": "",
+		"type": "ESP32COREBOARD",
+		"subtype": "",
+		"filesystem": "default"
+	},
+	{
+		"id": "ESP32-CORE-BOARD-OTA",
+		"description": "Espressif Systems ESP32-CoreBoard with OTA",
+		"manufacturer": "Espressif Systems",
+		"brand": "",
+		"type": "ESP32COREBOARD",
+		"subtype": "OTA",
+		"filesystem": "default"
+	},
+	{
+		"id": "ESP-WROVER-KIT",
+		"description": "Espressif Systems ESP-WROVER-KIT",
+		"manufacturer": "Espressif Systems",
+		"brand": "",
+		"type": "ESP-WROVER-KIT",
+		"subtype": "",
+		"filesystem": "default"
+	},
+	{
+		"id": "ESP-WROVER-KIT-OTA",
+		"description": "Espressif Systems ESP-WROVER-KIT with OTA",
+		"manufacturer": "Espressif Systems",
+		"brand": "",
+		"type": "ESP-WROVER-KIT",
+		"subtype": "OTA",
+		"filesystem": "default"
+	},
+	{
+		"id": "ESP32-THING",
+		"description": "SparkFun ESP32 Thing",
+		"manufacturer": "SparkFun",
+		"brand": "",
+		"type": "ESP32THING",
+		"subtype": "",
+		"filesystem": "default"
+	},
+	{
+		"id": "ESP32-THING-OTA",
+		"description": "SparkFun ESP32 Thing with OTA",
+		"manufacturer": "SparkFun",
+		"brand": "",
+		"type": "ESP32THING",
+		"subtype": "OTA",
+		"filesystem": "default"
+	},
+	{
+		"id": "ESP32-GATEWAY",
+		"description": "Olimex ESP32-Gateway",
+		"manufacturer": "Olimex",
+		"brand": "",
+		"type": "ESP32-GATEWAY",
+		"subtype": "",
+		"filesystem": "default"
+	},
+	{
+		"id": "ESP32-GATEWAY-OTA",
+		"description": "Olimex ESP32-Gateway with OTA",
+		"manufacturer": "Olimex",
+		"brand": "",
+		"type": "ESP32-GATEWAY",
+		"subtype": "OTA",
+		"filesystem": "default"
+	},
+	{
+		"id": "ESP32-EVB",
+		"description": "Olimex ESP32-EVB",
+		"manufacturer": "Olimex",
+		"brand": "",
+		"type": "ESP32-EVB",
+		"subtype": "",
+		"filesystem": "default"
+	},
+	{
+		"id": "ESP32-EVB-OTA",
+		"description": "Olimex ESP32-EVB with OTA",
+		"manufacturer": "Olimex",
+		"brand": "",
+		"type": "ESP32-EVB",
+		"subtype": "OTA",
+		"filesystem": "default"
+	},
+	{
+		"id": "GENERIC",
+		"description": "Generic ESP32 board",
+		"manufacturer": "Generic",
+		"brand": "",
+		"type": "GENERIC",
+		"subtype": "",
+		"filesystem": "default"
+	},
+	{
+		"id": "GENERIC-OTA",
+		"description": "Generic ESP32 board with OTA",
+		"manufacturer": "Generic",
+		"brand": "",
+		"type": "GENERIC",
+		"subtype": "OTA",
+		"filesystem": "default"
+	}
+]

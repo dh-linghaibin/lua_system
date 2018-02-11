@@ -1,0 +1,13 @@
+diff --git a/components/lwip/api/api_msg.c b/components/lwip/api/api_msg.c
+index bfb07b8..15080b9 100755
+--- a/components/lwip/api/api_msg.c
++++ b/components/lwip/api/api_msg.c
+@@ -875,7 +875,7 @@ lwip_netconn_do_close_internal(struct netconn *conn  WRITE_DELAYED_PARAM)
+         }
+       }
+     }
+-    if ((err == ERR_OK) && (tpcb != NULL))
++    if ((err == ERR_OK) && (tpcb != NULL) && (!linger_wait_required))
+ #endif /* LWIP_SO_LINGER */
+     {
+       err = tcp_close(tpcb);
