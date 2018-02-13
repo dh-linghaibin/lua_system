@@ -35,17 +35,27 @@ static const char *src = NULL;
 //3 - 当注册时间发生时 c 调用 lua管理器 并传入标识符
 //4 - lua 管理器 通过 c 接口 通讯 lua
 
-static int setnotify(lua_State *L)
+static int reg_root(lua_State *L)
 {
-    src = luaL_checkstring(L, 1);    //出栈获取源字符串
+    //src = luaL_checkstring(L, 1);    //出栈获取源字符串
     lua_callback = luaL_ref(L,LUA_REGISTRYINDEX);//LUA_REGISTRYINDEX);
     return 0;
 }
 
-static int testnotify(lua_State *L)
+// lua_gettop(L) 可以返回函数收到的参数个数。 第一个参数（如果
+// 有的话） 在索引 1 的地方， 而最后一个参数在索引 lua_gettop(L) 处。 当需要向 Lua 返回
+// 值的时候， C 函数只需要把它们以正序压到堆栈上（第一个返回值最先压入） ， 然后返回这
+// 些返回值的个数。 在这些返回值之下的， 堆栈上的东西都会被 Lua 丢掉。 和 Lua 函数一
+// 样， 从 Lua 中调用 C 函数也可以有很多返回值。
+
+static int reg_app(lua_State *L)
 {
+    char *pack = NULL;
+    pack = luaL_checkstring(L, 1); //获取app 包名
+    on_create = luaL_ref(L,LUA_REGISTRYINDEX);//获取app回调函数
+
     lua_rawgeti(L, LUA_REGISTRYINDEX, lua_callback); //压栈
-    lua_pushstring(L, "how");
+    lua_pushstring(L, pack);
     lua_call(L, 1, 0);//访问栈
     return 0;
 }
@@ -62,8 +72,8 @@ const int haha_error_map;
 
 static const LUA_REG_TYPE cblib[] =
 {
-    { LSTRKEY("setnotify"     ),          LFUNCVAL( setnotify          ) }, //测试 使用
-    { LSTRKEY("testnotify"    ),          LFUNCVAL( testnotify         ) },
+    { LSTRKEY("reg_root"     ),          LFUNCVAL( reg_root          ) }, //测试 使用
+    { LSTRKEY("reg_app"    ),          LFUNCVAL( reg_app         ) },
     { LSTRKEY("testenv"       ),          LFUNCVAL( testenv            ) },
     // DRIVER_REGISTER_LUA_ERRORS(haha)
     { LNILKEY, LNILVAL }
