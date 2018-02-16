@@ -34,11 +34,13 @@ static const char *src = NULL;
 //2 - lua 应用 注册
 //3 - 当注册时间发生时 c 调用 lua管理器 并传入标识符
 //4 - lua 管理器 通过 c 接口 通讯 lua
+//参数 root 包名 函数名
+//参数 app 没有参数
 
 static int reg_root(lua_State *L)
 {
     //src = luaL_checkstring(L, 1);    //出栈获取源字符串
-    lua_callback = luaL_ref(L,LUA_REGISTRYINDEX);//LUA_REGISTRYINDEX);
+    lua_callback = luaL_ref(L, LUA_REGISTRYINDEX); //LUA_REGISTRYINDEX);
     return 0;
 }
 
@@ -52,11 +54,21 @@ static int reg_app(lua_State *L)
 {
     char *pack = NULL;
     pack = luaL_checkstring(L, 1); //获取app 包名
-    on_create = luaL_ref(L,LUA_REGISTRYINDEX);//获取app回调函数
+    int on_create = luaL_ref(L, LUA_REGISTRYINDEX); //获取app回调函数
 
     lua_rawgeti(L, LUA_REGISTRYINDEX, lua_callback); //压栈
     lua_pushstring(L, pack);
-    lua_call(L, 1, 0);//访问栈
+    lua_pushnumber(L, on_create);
+    lua_pcall(L, 2, 0, 0);//访问栈
+    return 0;
+}
+
+static int ask_app(lua_State *L)
+{
+    //int id =  luaL_ref(L,LUA_REGISTRYINDEX);
+    int id = luaL_checkinteger(L, 1);
+    lua_rawgeti(L, LUA_REGISTRYINDEX, id); //压栈
+    lua_call(L, 0, 0);//访问栈
     return 0;
 }
 
@@ -72,9 +84,10 @@ const int haha_error_map;
 
 static const LUA_REG_TYPE cblib[] =
 {
-    { LSTRKEY("reg_root"     ),          LFUNCVAL( reg_root          ) }, //测试 使用
-    { LSTRKEY("reg_app"    ),          LFUNCVAL( reg_app         ) },
-    { LSTRKEY("testenv"       ),          LFUNCVAL( testenv            ) },
+    { LSTRKEY("reg_root"    ),  LFUNCVAL( reg_root  ) }, //测试 使用
+    { LSTRKEY("reg_app"     ),  LFUNCVAL( reg_app   ) },
+    { LSTRKEY("testenv"     ),  LFUNCVAL( testenv   ) },
+    { LSTRKEY("ask_app"     ),  LFUNCVAL( ask_app   ) },
     // DRIVER_REGISTER_LUA_ERRORS(haha)
     { LNILKEY, LNILVAL }
 };

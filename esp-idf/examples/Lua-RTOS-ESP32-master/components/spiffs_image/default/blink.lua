@@ -27,11 +27,36 @@ function defcallback()
   print "Predef callback"
 end
 
+funid = 0;
+
+mytable = {}
+
+function test1(name,num)
+  -- body
+  print("test")
+  print(name)
+  print(num)
+  funid = num
+  mytable[name] = num
+end
+
+function app()
+  -- body
+  print("huanxing ling app")
+end
+
 thread.start(function()
-
-  haha.setnotify("ling",callback)
-  haha.testnotify()
-
+  for key, value in pairs(mytable) do
+    print(value .. key)
+  end
+  -- haha.reg_root("ling",callback)
+  -- haha.testnotify()
+  haha.reg_root(test1)
+  haha.reg_app("app",app)
+  -- haha.ask_app(funid)
+  for key, value in pairs(mytable) do
+    print(value .. key)
+  end
   -- haha.setnotify(callback)
 
   -- print(module.constant)

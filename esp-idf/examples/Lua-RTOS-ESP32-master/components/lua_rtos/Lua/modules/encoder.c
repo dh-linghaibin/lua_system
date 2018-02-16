@@ -100,7 +100,7 @@ static int lencoder_attach( lua_State* L ) {
 		luaL_checktype(L, 4, LUA_TFUNCTION);
 		lua_pushvalue(L, 4);
 
-		callback = luaL_ref(L, LUA_REGISTRYINDEX);
+		callback = luaL_ref(L, LUA_REGISTRYINDEX);//获取函数
 	} else {
 		callback = LUA_NOREF;
 	}
