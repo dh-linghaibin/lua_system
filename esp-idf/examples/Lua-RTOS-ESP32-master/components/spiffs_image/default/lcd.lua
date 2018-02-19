@@ -40,22 +40,25 @@ function tftdemo.init()
 end
 
 
-
+function lhb_t(  )
+    print("lcd haha")
+end
 
 thread.start(function()
-    tftdemo.init();
-    print("lcd init")
+    -- tftdemo.init();
+    -- print("lcd init")
+    haha.reg_app("lhb_t",lhb_t)
     -- gdisplay.ellipse(0,0,20,20,GDISPLAY_WHITE)
-    gdisplay.clear()
-    gdisplay.setfont(gdisplay.FONT_7SEG)
-    num = 1000;
-    num = num + 1;
-    gdisplay.write({0,0},tostring(num))
-    while true do
-        tmr.delayms(300)
-        gdisplay.clear()
-        num = num + 1;
-        gdisplay.write({0,0},tostring(num))
+    -- gdisplay.clear()
+    -- gdisplay.setfont(gdisplay.FONT_7SEG)
+    -- num = 1000;
+    -- num = num + 1;
+    -- gdisplay.write({0,0},tostring(num))
+    -- while true do
+        -- tmr.delayms(300)
+        -- gdisplay.clear()
+        -- num = num + 1;
+        -- gdisplay.write({0,0},tostring(num))
         -- print(num);
-    end
+    -- end
 end)
